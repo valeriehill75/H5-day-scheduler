@@ -2,7 +2,8 @@ $(document).ready(function(){
     
     $("#currentDay");moment().format('dddd-MMMM-Do');{
     const today = moment();
-    console.log(today.format());
+    console.log(today.format('dddd-MMMM-Do'));
+    $("#currentDay").text(today);
     }
 
 
@@ -29,8 +30,13 @@ $(document).ready(function(){
     }
 
     $(".saveBtn").on("click", function() {
+        var answerInput = document.querySelector("<textarea>");
         var answer = answerInput.value.trim()
         console.log(answer);
+        localStorage.setItem("answer", JSON.stringify(answer));
+
+        var savedAnswer = JSON.parse(localStorage.getItem("answer"));
+        answerInput.textContent = savedAnswer.answer;
     }
 
 ,)})
