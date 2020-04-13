@@ -1,5 +1,5 @@
-$(document).ready(function() {
-
+$(document).ready(function(){
+    
     $("#currentDay");moment().format('dddd-MMMM-Do');{
     const today = moment();
     console.log(today.format());
@@ -29,10 +29,8 @@ $(document).ready(function() {
     }
 
     $(".saveBtn").on("click", function() {
-        
+        var answer = answerInput.value.trim()
+        console.log(answer);
     }
 
-
-
-});
-
+,)})
