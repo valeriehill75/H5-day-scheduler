@@ -6,7 +6,6 @@ $(document).ready(function(){
     $("#currentDay").text(today);
     }
 
-
     var schedTimes = ["9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
 
     // For Loop to create time blocks, text area, and save button.
@@ -18,16 +17,19 @@ $(document).ready(function(){
 
         timeDiv.addClass("time-block hour");
         forWriting.addClass("description");
+        forWriting.addClass(schedTimes[i]);
         saveButton.addClass("saveBtn");
 
         timeDiv.attr("times-print", schedTimes[i]);
         timeDiv.text(schedTimes[i]);
+
 
         $("#schedule").append(timeDiv);
         $("#schedule").append(forWriting);
         $("#schedule").append(saveButton);
 
     }
+
 
     $(".saveBtn").on("click", function() {
         var answerInput = document.querySelector("<textarea>");
